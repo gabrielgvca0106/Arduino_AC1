@@ -36,14 +36,14 @@ void loop()
 {
   // REGRA DECISÃO DO BOTÃO 1
   if((millis() - lastDebounceTime1) > botaoDelay && digitalRead(botao1)){
-      Serial.println("Produção iniciada");
+      Serial.println("Processo iniciado");
     ledVermelho(true);
       lastDebounceTime1 = millis();
  }
 
  //REGRA DECISÃO DO BOTÃO 2
   if((millis() - lastDebounceTime2) > botaoDelay && digitalRead(botao2)){
-      Serial.println("Producão parada");
+      Serial.println("Processo encerrado");
     ledVermelho(false);
       lastDebounceTime2 = millis();
   }
@@ -51,19 +51,19 @@ void loop()
 //REGRA DE DECISÃO DO LED AZUL
   if(getTemperatura() > 15){
     ledAzul(true);
-    Serial.println("Temperatura acima do correto");
+    Serial.println("Temperatura acima do esperado");
   }else{
     ledAzul(false);
-    Serial.println("Temperatura correta");
+    Serial.println("Temperatura esperada");
   }
 	
 //REGRA DE DECISÃO DO LED VERDE
   if(getLuminosidade() > 5){
     ledVerde(true);
-    Serial.println("Luminosidade acima do correto");
+    Serial.println("Luminosidade acima do esperado");
   }else{
     ledVerde(false);
-    Serial.println("Luminosidade correta");
+    Serial.println("Luminosidade esperada");
   }
 
   delay(10);
