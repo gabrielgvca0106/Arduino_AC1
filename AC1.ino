@@ -88,7 +88,6 @@ int getTemperatura(){
 } 
 
 // CÁLCULO DA LUMINOSIDADE
-int getTemperatura(){
 int getLuminosidade(){
       int luminosidade;
     luminosidade = map(analogRead(A1), 6, 619, -3, 10);
